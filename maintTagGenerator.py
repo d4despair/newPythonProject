@@ -29,6 +29,7 @@ with open(template_path, 'r') as f:
             for i in reader.fieldnames:
                 template_other[i] = r[i]
 
+# print(template)
 print('r in template')
 
 wb = openpyxl.load_workbook('202202026-4变量生成器 20230114.xlsx', read_only=1, data_only=1)
@@ -50,6 +51,7 @@ with open(maint_db_path, 'w', newline='') as csvfile:
             template[field][':MemoryInt'] = tag + '\\' + field
             template[field]['Comment'] = maintTags[tag] + ' ' + field
             template[field]['AlarmComment'] = maintTags[tag] + ' 维护时间到'
+            template[field]['InitialValue'] = 1234
             writer.writerow(template[field])
 
 print(maint_db_path + '生成完毕')

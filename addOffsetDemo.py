@@ -1,7 +1,6 @@
 # @AUTHOR: DIOCAI
 # DEVELOP TIME: 23/3/10 16:02
 import math
-
 import openpyxl
 from openpyxl import Workbook
 path = 'value_var.xlsx'
